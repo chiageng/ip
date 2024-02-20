@@ -25,6 +25,13 @@ public class TaskList {
         this.ui = new Ui();
     }
 
+    /**
+     * Creates a todo task based on the provided task description.
+     *
+     * @param task The description of the todo task.
+     * @return The created todo task.
+     * @throws DukeException If task description is empty.
+     */
     private Task createTodoTask(String task) throws DukeException {
         if (task.equals("")) {
             throw new DukeException("The description is not provided. "
@@ -34,6 +41,13 @@ public class TaskList {
         return new ToDo(task);
     }
 
+    /**
+     * Creates a deadline task based on the provided task description.
+     *
+     * @param task The description of the deadline task.
+     * @return The created deadline task.
+     * @throws DukeException If task description or deadline is not provided.
+     */
     private Task createDeadlineTask(String task) throws DukeException {
         String[] taskArr = task.split(" /by ");
 
@@ -49,6 +63,13 @@ public class TaskList {
         return new Deadline(description, datetime);
     }
 
+    /**
+     * Creates an event task based on the provided task description.
+     *
+     * @param task The description of the event task.
+     * @return The created event task.
+     * @throws DukeException If task description or event period is not provided.
+     */
     private Task createEventTask(String task) throws DukeException {
         String[] taskArr = task.split(" /from ");
 
@@ -72,6 +93,14 @@ public class TaskList {
         return new Event(description, MyDateTime.convertDateTime(by), MyDateTime.convertDateTime(to));
     }
 
+    /**
+     * Creates a task based on the provided type and task description.
+     *
+     * @param type The type of task to create.
+     * @param task The description of the task.
+     * @return The created task.
+     * @throws DukeException If the command is unavailable or if task description is invalid.
+     */
     private Task createTask(String type, String task) throws DukeException {
         if (type.equals(CommandType.TODO.toString())) {
             return createTodoTask(task);

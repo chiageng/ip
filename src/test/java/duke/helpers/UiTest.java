@@ -1,7 +1,8 @@
 package duke.helpers;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+
 public class UiTest {
     @Test
     public void testGetCommandList() {
@@ -23,5 +24,5 @@ public class UiTest {
         String actual = new Ui().getCommandList(); // Replace YourClassName with the actual class name
 
         assertEquals(expected, actual);
-        }
+    }
 }
