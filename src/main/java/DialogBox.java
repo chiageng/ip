@@ -88,13 +88,13 @@ public class DialogBox extends HBox {
     }
 
     /**
-     * Creates a DialogBox object representing a message from Duke.
+     * Creates a DialogBox object representing a message from ChatPal.
      *
      * @param message The message to be displayed in the dialog box.
      * @param image The image to be displayed alongside the message.
-     * @return A DialogBox object representing a message from Duke.
+     * @return A DialogBox object representing a message from ChatPal.
      */
-    public static DialogBox getDukeDialog(String message, Image image) {
+    public static DialogBox getChatPalDialog(String message, Image image) {
         var db = new DialogBox(message, image, false);
         db.flip();
         db.setBackground(new Background(new BackgroundFill(Color.web("#ffff83"), null, null)));
